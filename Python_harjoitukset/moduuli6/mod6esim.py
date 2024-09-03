@@ -1,14 +1,14 @@
-def do_something():
-    print("Tämä aliohjelma tekee")
-    print("jotain!")
-    return "Tämä on funktion palauttama merkkijono"
+#def do_something():
+#    print("Tämä aliohjelma tekee")
+#    print("jotain!")
+#    return "Tämä on funktion palauttama merkkijono"
 
 #return_value = do_something()
 #print(return_value)
 
-def say_hello(to):
+#def say_hello(to):
     #print("Moi " + to)
-    return "Moi " + to
+#    return "Moi " + to
 
 #say_hello("Miki")
 #print(say_hello("Miki"))
