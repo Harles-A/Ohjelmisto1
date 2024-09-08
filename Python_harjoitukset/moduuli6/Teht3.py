@@ -9,5 +9,5 @@ while True:
         print("Annetu määrä on negatiivinen. Ohjelma lopeta.")
         break
     litra_output = gall_to_litra(gall_input)
-    print(f"{gall_input} nestegallona on {litra_output} litra")
+    print(f"{gall_input} nestegallona on {litra_output:.3f} litra")
 

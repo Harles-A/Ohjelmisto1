@@ -1,6 +1,4 @@
 import math
-# TODO: First ask how many pizzas and then price and size of each and add them to lists.
-#  Each time store the cheapest one in the value of cheapest_pizza. At the end say which pizza is cheapest.
 def calculate_price(diameter, price):
     #pizzan pinta-ala pi *r^2
     diameter = diameter / 100
@@ -10,7 +8,7 @@ def calculate_price(diameter, price):
     return price/area
 
 pizza1_diameter = float(input("Syötä 1. pizzan halkaisija senttimetreinä: "))
-pizza2_diameter = float(input("Syötä 2. pizzan halkaisija sentti metreinä: "))
+pizza2_diameter = float(input("Syötä 2. pizzan halkaisija senttimetreinä: "))
 pizza1_hinta = float(input("Anna 1. pizzan hinta: "))
 pizza2_hinta = float(input("Anna 2. pizzan hinta: "))
 
@@ -22,7 +20,7 @@ print(f"Toisen pizzan hinta on {pizza2_nelio_hinta:.2f}.")
 
 if pizza1_nelio_hinta < pizza2_nelio_hinta:
     print("Ensimmäinen pizza on halvempi")
-elif pizza2_nelio_hinta > pizza1_nelio_hinta:
+elif pizza2_nelio_hinta < pizza1_nelio_hinta:
     print("Toinen pizza on halvempi")
 else:
     print("Pizzojen neliöhinta on sama.")
