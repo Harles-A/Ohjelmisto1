@@ -25,7 +25,31 @@ class Hissi:
             self.nykyinen_kerros -= 1
         print(f"Nykyinen kerros: {self.nykyinen_kerros}")
 
+class Talo:
+    def __init__(self, alin, ylin, lkm):
+        self.alin_kerros = alin
+        self.ylin_kerros = ylin
+        self.hissit = []
+        self.luo_hissit(lkm)
 
-h = Hissi(1, 9)
-h.siirry_kerrokseen(4)
-h.siirry_kerrokseen(1)
+    def luo_hissit(self, lkm):
+        for nro in range(lkm):
+            uusi_hissi = Hissi(self.alin_kerros, self.ylin_kerros)
+            self.hissit.append(uusi_hissi)
+        return
+
+    def aja_hissiä(self, hissin_nro, kohdekerros):
+        ajettava_hissi = self.hissit[hissin_nro - 1]
+        ajettava_hissi.siirry_kerrokseen(kohdekerros)
+
+    def palohalytys(self):
+        for hissi in self.hissit:
+            hissi.siirry_kerrokseen(self.alin_kerros)
+
+
+
+taloesim = Talo(1, 8, 2)
+taloesim.aja_hissiä(1, 6)
+taloesim.aja_hissiä(1, 3)
+taloesim.aja_hissiä(2, 4)
+taloesim.palohalytys()
