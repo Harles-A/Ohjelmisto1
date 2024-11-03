@@ -6,12 +6,17 @@ def hae_weather(name_input, api_key):
     #print(vastaus)
     ilma = vastaus['weather'][0]['description']
     temp = vastaus['main']['temp']
-    return temp, ilma
+    tuuli = vastaus['wind']['speed']
+    return temp, ilma, tuuli
 
 def main():
     name_input = input("Anna paikakunnan nimi: ")
-    # Käytään API key input-ia koska tämä tehtävä on Githubissa public paikassa.
+    # Käytään API key input-ia koska tämä tehtävä on Githubissa public kansiossa.
     api_key = input("Anna API avain: ")
-    print(f"Lämpotila paikassa {name_input} on {hae_weather(name_input, api_key)} astetta")
+    temp, ilma, tuuli = hae_weather(name_input, api_key)
+    print(f"\n - Sää {name_input} -")
+    print(f"Lämpötila: {temp} °C")
+    print(f"Sään kuvaus: {ilma.capitalize()}")
+    print(f"Tuulen nopeus: {tuuli} m/s")
 
 main()
