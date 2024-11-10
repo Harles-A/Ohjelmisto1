@@ -35,7 +35,7 @@ def get_airport_info(icao_code):
             "Name": result[0],
             "Municipality": result[1]
         }
-    except ValueError as e:
+    except ValueError:
         response = {
             "error": "404 Airport not found"
         }
